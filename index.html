@@ -295,34 +295,76 @@ var greeting = 'Hello World' || 'Something Else';
 </code></pre>
 					</section>
 					<section>
+						<p class="fragment">Object literals and JSON</a>
+						<p class="fragment">Dot notation</a>
+						<p class="fragment">Unpredicatable ordering</a>
+					</section>
+					<section>
 						<h2>Types: Array</h2>
 <pre><code class="hljs javascript" data-trim>
 ['one', 2, 'three']
 </code></pre>
+					</section>
+					<section>
+						<p class="fragment">Down with C-style loops</a>
 					</section>
 				</section>
 
 				<section>
 					<section>
 						<h1>Functions</h1>
+						<em class="fragment">first class objects</em>
 					</section>
 					<section>
 						<h2>Definition</h2>
+<pre><code class="hljs javascript" data-trim>
+function greet (name) {
+	console.log('Hello ' + name);
+}
+</code></pre>
 					</section>
 					<section>
 						<h2>Naming</h2>
+<pre><code class="hljs javascript" data-trim>
+(function () {
+	console.log('Anonymous function');
+})(); // IEFE
+
+function named () {
+	console.log('Named function');
+}
+named();
+
+var assigned = function () {
+	console.log('Assigned function');
+}
+</code></pre>
 					</section>
 					<section>
 						<h2>Arguments</h2>
+<pre><code class="hljs javascript" data-trim>
+(function (arg1) {
+	console.log(arguments);
+})('foo', 'bar');
+</code></pre>
+					</section>
+					<section>
+						<h2>Hoisting</h2>
+<pre><code class="hljs javascript" data-trim>
+console.log(greeter('Paul'));
+function greeter (name) {
+	return 'Hello ' + name;
+}
+</code></pre>
 					</section>
 					<section>
 						<h2>Scope</h2>
 					</section>
 					<section>
-						<h2>Methods and the 'this' keyword</h2>
+						<h2>Closures</h2>
 					</section>
 					<section>
-						<h2>Closures</h2>
+						<h2>Methods and the 'this' keyword</h2>
 					</section>
 					<section>
 						<h2>Secrets of the Javascript Ninja</h2>
@@ -676,7 +718,7 @@ xmlhttp.send();
 
 				<section>
 					<section>
-						<h1>Node.js</h1>				
+						<h1>Node.js</h1>
 					</section>
 					<section>
 <pre><code class="hljs javascript" data-trim>
@@ -732,7 +774,7 @@ http.createServer(function(req, res) {
 					<section>
 						<h2>Browserify</h2>
 						<a href="http://browserify.org">browserify.org</a><br/>
-						<em>substack</em>
+						<em>substack</em><br/>
 						<img src="./img/substack.jpg" />
 					</section>
 				</section>
