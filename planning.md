@@ -19,7 +19,7 @@ Syntax:
   Feature: http://jsforcats.com/ Max Ogden
 
 
-Syntax: Detail: Book: http://eloquentjavascript.net/
+Synta Detail: Book: http://eloquentjavascript.net/
 Variables and Types
   Strings
   Numbers
@@ -61,29 +61,32 @@ The DOM API and other Browserishnesses
 document.querySelector/All
 createElement
 appendChild
-Events - big topic.
 
+Events
 
-Other APIs:
-  https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation
-  Geolocation
+XMLHttpRequest - kinda clunky
 
-  Wait. Callback? Async
-  Async!
+Geolocation
+https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation
+http://greatbritishpublictoiletmap.rca.ac.uk/loos/near/:lon/:lat
 
-  AJAX - our first application
-  http://greatbritishpublictoiletmap.rca.ac.uk/loos/near/:lon/:lat
-
-  Feature: jQuery + Resig
-  (they'll tell you it is better to do it in VanillaJS (they're probably wrong ;-)))
-
-Excercise: Make an app with jQuery  
+Demo: LooList
   html page
-  script tag to load jQuery
+  add a button which calls a function
   use geolocation
   construct url
-  fetch data
-  draw html
+  fetch data and parse the JSON
+  draw html:
+    listing the nearby toilets and some of their features
+
+Feature: jQuery + Resig
+(they'll tell you it is better to do it in VanillaJS (they're probably wrong ;-)))
+
+
+Excercise:
+  rebuild loolist with jQuery
+  Extension:
+    add real mapping using http://leafletjs.com/
 
 
 

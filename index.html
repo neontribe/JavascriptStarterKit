@@ -37,8 +37,722 @@
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
+
 				<section>
-					<h1>Javascript Starter Kit</h1>
+					<section>
+						<h1>Javascript Starter Kit</h1>
+					</section>
+					<section>
+						<a href="https://www.neontribe.co.uk"><img src="./img/neontribe_logo.png" style="border:none; background: transparent;" alt="Neontribe Logo - looks like a bug, or a bison, depending on your perspective"/></a>
+						<h2>Rupert Redington</h2>
+						<p><em>rupert@neontribe.co.uk || @rupertredington</em></p>
+					</section>
+					<section>
+						<blockquote>
+							&ldquo;Standing on the shoulders of giants...<span class="fragment fade-out">&rdquo;</span>
+							<span class="fragment"><br/>copying and pasting their code.&rdquo;</span>
+						</blockquote>
+					</section>
+					<section>
+						<h2>Checklist</h2>
+						<ul>
+							<li class="fragment">A browser</li>
+							<li class="fragment">A text editor</li>
+							<li class="fragment">A terminal</li>
+							<li class="fragment">Node.js</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Suggestions</h2>
+						<em>proffered without warranty</em>
+						<p><a href="">Chrome</a> is my day to day browser. It should be <a href="">Firefox</a> but I find Chrome's developer tools more comfortable.</p>
+						<p><a href="">Atom</a> is a good, free, editor. It is made out of web. <a href="">Vim</a> and <a href="">Sublime</a> are handy too.</p>
+						<p>Your choice of terminal is probably largely dicated by your operating system.</p>
+						<p>I like to use <a href="">nvm</a> to manage node.js, or you can get it direct from <a href="">nodejs.org</a></p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>A Short History</h1>
+						<h2>Part One: The Early Days</h2>
+					</section>
+					<section>
+						<h2>10 days in May 1995</h2>
+						<img height="50%" src="./img/brendan.jpg"/>
+						<br/>
+						<em>Brendan Eich worked at Netscape</em>
+					</section>
+					<section>
+							<blockquote>
+								&ldquo;They fuck you up, your marketing execs do,<br/>
+								They don't mean to, yet they do.&rdquo;
+								<br/>
+								<br/>
+								<cite>Philip Larkin, mostly</cite>
+							</blockquote>
+							<p class="fragment">They nearly called it <em>Mocha</em>, and then <em>LiveScript</em></p>
+					</section>
+					<section>
+						<h2>Vilification</h2>
+						<ul>
+							<li class="fragment">Stupid Name</li>
+							<li class="fragment">Typecasting</li>
+							<li class="fragment">Early Versions were pants...</li>
+							<li class="fragment">...embedded inconsistently in buggy web browsers</li>
+							<li class="fragment">Some poor design decisions</li>
+							<li class="fragment">Oddly behaved standards body</li>
+							<li class="fragment">Misunderstandings about OOP</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Javascript, The Good Parts</h2>
+						<em>Douglas Crockford</em><br/>
+						<img src="./img/thegoodparts.jpg"/>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Hello World</h1>
+						<em>in a language with no built-in IO</em>
+<pre><code class="hljs javascript" data-trim>
+console.log('hello, world');
+</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Language Basics</h1>
+					</section>
+					<section>
+						<h2>Javascript for Cats</h2>
+						<a href="http://jsforcats.com">jsforcats.com</a><br/>
+						<em>Max Ogden</em><br/>
+						<img src="./img/max.jpg"/>
+					</section>
+					<section>
+						<h2>Types: String</h2>
+<pre><code class="hljs javascript" data-trim>
+'Strings represent text'
+"You can quote them either way"
+'There\'s no escape from quoting them though.'
+'strings can be ' + 'concatenated'
+</code></pre>
+					</section>
+					<section>
+						<h2>Types: Number</h2>
+<pre><code class="hljs javascript" data-trim>
+96
+0
+2.5
+2.988e8
+Infinity
+-Infinity
+</code></pre>
+					</section>
+					<section>
+						<h2>Comments</h2>
+<pre><code class="hljs javascript" data-trim>
+// Comments are useful
+
+console.log(1); // They can follow an expression on a line
+
+/**
+  They can cover multiple lines
+	like this...
+ */
+</code></pre>
+					</section>
+					<section>
+						<h2>Types: Boolean</h2>
+<pre><code class="hljs javascript" data-trim>
+true
+false
+</code></pre>
+					</section>
+					<section>
+						<h2>Operators: Arithmetic</h2>
+<pre><code class="hljs javascript" data-trim>
+4 * 2
+10 / 5
+6 - 4
+10 % 3
+</code></pre>
+						<p class="fragment">Don't worry about operator precendence, just use parentheses liberally.</p>
+					</section>
+					<section>
+						<h2>Operators: typeof</h2>
+<pre><code class="hljs javascript" data-trim>
+typeof 9
+// -> number
+typeof 'I\'m a string'
+// -> string
+typeof NaN
+// -> number
+</code></pre>
+<em class="fragment">oddity alarm!</em>
+					</section>
+					<section>
+						<h2>Nothing will come of nothing...</h2>
+<pre><code class="hljs javascript" data-trim>
+0 // Mathematical Zero
+'' // An empty string
+false // Boolean false
+null // Explicit nothing
+undefined // Undefined variable
+NaN // Not A Number
+</code></pre>
+					</section>
+					<section>
+						<h2>Operators: Comparison</h2>
+<pre><code class="hljs javascript" data-trim>
+2 > 1 // -> true
+2 <= 1 // -> false
+'Buffet' == 'Buffet' // -> true
+'Pizza' != 'Pizza' // -> true
+'Pizza' > 'Buffet' // -> true
+</code></pre>
+					</section>
+					<section>
+						<h2>Operators: The oddness of type coercion</h2>
+<pre><code class="hljs javascript" data-trim>
+8 * null
+// → 0
+"5" - 1
+// → 4
+"5" + 1
+// → 51
+"five " * 2
+// → NaN
+</code></pre>
+					</section>
+					<section>
+						<h2>Operators: loose and strict comparison</h2>
+<pre><code class="hljs javascript" data-trim>
+0 == false
+// true
+'' == false
+// true
+null == undefined
+// true
+'' == 0
+// true
+</code></pre>
+						<em clas="fragment">Try these, and more, with ==, !=,  === and !==</em>
+					</section>
+					<section>
+						<h2>Operators: Logical</h2>
+<pre><code class="hljs javascript" data-trim>
+&& // logical AND (binary)
+|| // logical OR (binary)
+! // negation (unary)
+? : // conditional (ternary)
+</code></pre>
+					</section>
+					<section>
+						<h2>Variable Assignment</h2>
+<pre><code class="hljs javascript" data-trim>
+var greeting = 'Hello World';
+var placeholder; // initialized undefined
+</code></pre>
+						<p class="fragment">Variable names can't start with a digit, can't be one of the reserved words, and can't contain puntuation except $ and _</p>
+					</section>
+					<section>
+						<h2>Short Circuiting</h2>
+<pre><code class="hljs javascript" data-trim>
+var greeting = 'Hello World' || 'Something Else';
+// OR short circuits truthily to the left.
+// often used to assign defaults.
+// if the left hand is truthy the right
+// will never even get executed.
+// && is the inverse...
+</code></pre>
+					</section>
+					<section>
+						<h2>Who will save us?</h2>
+						<p class="fragment">Linters will save us!</p>
+						<ul class="fragment">
+							<li>jslint</li>
+							<li>jshint</li>
+							<li>eslint</li>
+						</ul>
+						<p class="fragment">A good place to talk about semicolons</p>
+					</section>
+					<section>
+						<h2>Eloquent Javascript</h2>
+						<a href="http://eloquentjavascript.net">eloquentjavascript.net</a><br/>
+						<em>Marijn Haverbeke</em><br/>
+						<img src="./img/eloquent.png"/>
+					</section>
+					<section>
+						<h2>Types: Object</h2>
+<pre><code class="hljs javascript" data-trim>
+{
+	key: 'value'
+}
+</code></pre>
+					</section>
+					<section>
+						<h2>Types: Array</h2>
+<pre><code class="hljs javascript" data-trim>
+['one', 2, 'three']
+</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Functions</h1>
+					</section>
+					<section>
+						<h2>Definition</h2>
+					</section>
+					<section>
+						<h2>Naming</h2>
+					</section>
+					<section>
+						<h2>Arguments</h2>
+					</section>
+					<section>
+						<h2>Scope</h2>
+					</section>
+					<section>
+						<h2>Methods and the 'this' keyword</h2>
+					</section>
+					<section>
+						<h2>Closures</h2>
+					</section>
+					<section>
+						<h2>Secrets of the Javascript Ninja</h2>
+						<em>John Resig</em><br/>
+						<img src="./img/secrets.jpg" />
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Workshopper 1</h1>
+						<p><a href="http://nodeschool.io">Nodeschool</a> is full of community workshoppers. They are invaluable.</p>
+						<p>Try out "javascripting" first. If that isn't challenging give "Functional Javascript" a go.</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>The DOM API</h1>
+					</section>
+					<section>
+						<h2>Mozilla Developer Network</h2>
+						<a href="https://developer.mozilla.org/en-US/docs/Web">MDN</a>
+					</section>
+					<section>
+						<h2>document.querySelector</h2>
+					</section>
+					<section>
+						<h2>document.createElement</h2>
+					</section>
+					<section>
+						<h2>document.appendChild</h2>
+					</section>
+					<section>
+						<h2>Events</h2>
+						<a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener">element.addEventListener</a>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Debugging</h1>
+					</section>
+<!-- CONSOLE API -->
+
+					<section>
+						<h2>The Console API</h2>
+						<p>A collection of methods provided to web applications</p>
+						<p class="fragment">Which means you can, if you want, drop them into your own code</p>
+						<p class="fragment">What follows are just some highlights from <a href="https://developer.chrome.com/devtools/docs/console-api">the docs</a></p>
+					</section>
+					<section data-state="runme">
+						<h2>console.log() and friends</h2>
+<pre><code class="hljs javascript" data-trim>
+console.log('hello, again');
+</code></pre>
+					</section>
+					<section data-state="runme">
+						<h2>multiple arguments</h2>
+<pre><code class="hljs javascript" data-trim>
+var ragbag = ['All', 'manner', ['of'], {stuff: '!'}];
+console.log.apply(console, ragbag);
+</code></pre>
+					</section>
+					<section data-state="runme">
+						<h2>substitutions</h2>
+<pre><code class="hljs javascript" data-trim>
+var home = 'norwich';
+console.log('hello %s', home.toUpperCase());
+</code></pre>
+					</section>
+					<section data-state="runme">
+						<h2>OMG substitutions</h2>
+						<p>You can format expandable items into your string...</p>
+<pre><code class="hljs javascript" data-trim>
+var element = document.querySelector('section');
+var object = {expandable: 'me'};
+console.log('Elements %o and Objects %O', element, object);
+</code></pre>
+					</section>
+					<section data-state="runme">
+						<h2>Alarms!</h2>
+<pre><code class="hljs javascript" data-trim>
+console.warn("You'll ignore this");
+console.error("But maybe not this");
+</code></pre>
+						<p class="fragment">console.error() comes with a free stack trace!</p>
+					</section>
+					<section data-state="runme">
+						<h2>Stack trace, you say?</h2>
+						<p>If you want one of your own you can use:</p>
+<pre><code class="hljs javascript" data-trim>
+function traceMe () {
+	console.trace("My first voluntary stack trace");
+}
+traceMe();
+</code></pre>
+						</p>
+					</section>
+					<section data-state="runme">
+						<h2>Conditional traces with console.assert</h2>
+<pre><code class="hljs javascript" data-trim>
+var list = document.querySelectorAll('section');
+console.assert(list.length < 40, "Surely too many sections?");
+</code></pre>
+					</section>
+					<section data-state="runme">
+						<h2>Start a debug session</h2>
+<pre><code class="hljs javascript" data-trim>
+function debugMe () {
+	debugger;
+}
+debugMe();
+</code></pre>
+						<p class="fragment">More about the debugger later...</p>
+					</section>
+					<section data-state="runme">
+						<h2>Tabulating Data</h2>
+<pre><code class="hljs javascript" data-trim>
+var items = [
+	{type: 'foo', value: 'baz'},
+	{type: 'bar', value: 1},
+	{type: 'foo', value: null}
+];
+console.table(items);
+</code></pre>
+					</section>
+					<section data-state="runme">
+						<h2>Timings</h2>
+<pre><code class="hljs javascript" data-trim>
+console.time('My Timer');
+setTimeout(function(){
+	console.timeEnd('My Timer');
+}, 1500);
+</code></pre>
+					</section>
+
+
+<!-- COMMAND LINE API -->
+
+					<section>
+						<h1>The Command Line API</h1>
+						<p>Convenience functions for common developer tasks</p>
+						<p class="fragment">Only available from within the console itself</p>
+						<p class="fragment">Highlights from <a href="https://developer.chrome.com/devtools/docs/commandline-api">the docs</a></p>
+					</section>
+					<section>
+						<h2>$0-4</h2>
+						<div class="fragment">
+							<p>Select stuff using the pointery thing</p>
+							<img src="./img/pointer.png"/>
+						</div>
+						<p class="fragment">Get them in the console with $0 to $4</p>
+					</section>
+					<section class="findme">
+						<h2>$electors</h2>
+						<div class="fragment">
+<pre data-trim><code class="hljs javascript" data-trim>
+$('section');
+// Returns THE FIRST section element in the document
+</code></pre>
+						</div>
+						<div class="fragment">
+<pre><code class="hljs javascript" data-trim>
+$$('code');
+// Returns ALL the code elements in the document
+</code></pre>
+						</div>
+						<div class="fragment">
+<pre><code class="hljs javascript" data-trim>
+$x('html/body/script');
+// XPATH!!
+</code></pre>
+						</div>
+					</section>
+					<section>
+						<h2>$_</h2>
+						<p>Access the value of the last executed expression</p>
+						<em class="fragment">Mostly for when you forgot to assign it to a variable...</em>
+					</section>
+					<section>
+						<h2>copy()</h2>
+						<p>Copies a string representation to your clipboard</p>
+						<p class="fragment"><em>Copying DOM elements gets you HTML</em></p>
+						<p class="fragment"><em>Copying Objects gets you JSON</em></p>
+					</section>
+					<section>
+						<h2>inspect(el)</h2>
+						<p>Displays an element in the elements panel, try:</p>
+<pre><code class="hljs javascript" data-trim>
+inspect($('body section:first-of-type'));
+</code></pre>
+					</section>
+					<section>
+						<h2>debug(function)</h2>
+						<p>Invokes the debugger when the function supplied is called</p>
+					</section>
+					<section>
+						<h2>monitor(function)</h2>
+						<p>Logs function arguments on call, try the following:</p>
+<pre><code class="hljs javascript" data-trim>
+monitor(ragbag.noop);
+ragbag.noop('this', 'that', 'the other');
+</code></pre>
+						<p class="fragment"><em>Customers who bought monitor() also bought unmonitor()</em></p>
+					</section>
+					<section>
+						<h2>monitorEvents(object[, events])</h2>
+						<p>Logs events on an object (normally a DOM element)</p>
+<pre><code class="hljs javascript" data-trim>
+monitorEvents(window.document.body, 'contextmenu');
+</code></pre>
+						<p class="fragment"><em>Customers who bought monitorEvents() also bought unmonitorEvents()</em></p>
+					</section>
+
+<!-- THE INTERACTIVE DEBUGGER -->
+
+					<section>
+						<h1>Interactive Debugging in the Sources panel</h1>
+					</section>
+					<section>
+						<h2>Add a breakpoint</h2>
+						<p>At line 32 of ragbag.js</p>
+					</section>
+					<section data-state="runme">
+						<h2>Run ragbag.tryme('nordev')</h2>
+<pre><code class="hljs javascript" data-trim>
+ragbag.tryme('nordev');
+</code></pre>
+					</section>
+					<section>
+						<h2>Break on uncaught errors</h2>
+					</section>
+					<section data-state="runme">
+						<h2>Throw me an uncaught error</h2>
+<pre><code class="hljs javascript" data-trim>
+ragbag.tryme('zzzzzzzzzzzzzzzzzz');
+</code></pre>
+					</section>
+					<section>
+						<h2>Break on caught errors</h2>
+					</section>
+					<section data-state="runme">
+						<h2>Throw me an caught error</h2>
+<pre><code class="hljs javascript" data-trim>
+ragbag.tryme('xxxxxxxxxxxxxxxxxxx');
+</code></pre>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Web API: Geolocation</h1>
+						<a href="https://developer.mozilla.org/en-US/docs/Web/API/Geolocation/Using_geolocation">MDN: Using Geolocation</a>
+					</section>
+					<section>
+<pre><code class="hljs javascript" data-trim>
+navigator.geolocation.getCurrentPosition(function(pos){
+	console.log(pos);
+});
+</code></pre>
+						<p class="fragment">Welcome to Asyncronous Javascript</p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>XMLHttpRequest</h1>
+						<em>Making web requests from within</em>
+					</section>
+					<section>
+<pre><code class="hljs javascript" data-trim>
+var xmlhttp = new XMLHttpRequest();
+var host = 'http://greatbritishpublictoiletmap.rca.ac.uk';
+var path = '/loos/near/-0.08770/51.50824';
+xmlhttp.onreadystatechange = function() {
+	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+		var data = JSON.parse(xmlhttp.responseText);
+		console.log(data);
+	}
+};
+xmlhttp.open("GET", host + path, true);
+xmlhttp.setRequestHeader("Accept", "application/json");
+xmlhttp.send();
+</code></pre>
+					</section>
+					<section>
+						<h2>AJAX - a New Dawn</h2>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Workshop 2</h1>
+					</section>
+					<section>
+						<h2>LooLister</h2>
+						<p>Your mission is to put together a range of techniques to make a single page application.</p>
+						<ul>
+							<li>Make an HTML page with an empty body and a script tag</li>
+							<li>Using Javascript:
+									<ul>
+										<li>Add a button</li>
+										<li>Attatch a listener on click</li>
+										<li>Get you location</li>
+										<li>Make a request to the toilet map API</li>
+										<li>Parse the data</li>
+										<li>Construct an HTML display of the data</li>
+									</ul>
+							</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Extension Task</h2>
+						<ul>
+							<li>Add a real map for each loo using <a href="http://leafletjs.com">Leaflet.js</a></li>
+						<ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>jQuery</h1>
+						<a href="http://jquery.com">jQuery</a><br/>
+						<em>John Resig</em><br/>
+						<img src="./img/resig.jpg" />
+					</section>
+					<section>
+						<h2>jQuery all the things</h2>
+						<ul>
+							<li>Add jQuery to your page</li>
+							<li>Rewrite the XMLHttpRequest using <a href="http://api.jquery.com/category/ajax/">jQuery ajax</a></li>
+							<li>Rewrite the Event handling using <a href="http://api.jquery.com/category/events/mouse-events/">jQuery's events system</a></li>
+							<li>Rewrite the DOM manipulation using <a href="http://api.jquery.com/category/manipulation/">jQuery's DOM manipulation methods</a></li>
+						<ul>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Framework Explosion</h1>
+						<p class="fragment">The era of continual innovation?</p>
+					</section>
+					<section>
+						<h2>TODOMVC</h2>
+						<a href="http://todomvc.com">ToDoMVC.com</a><br/>
+						<em>Addy Osmani</em><br />
+						<img src="./img/addy.jpg" />
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Node.js</h1>				
+					</section>
+					<section>
+<pre><code class="hljs javascript" data-trim>
+var http = require('http');
+
+var hostname = '127.0.0.1';
+var port = 1337;
+
+http.createServer(function(req, res) {
+	res.writeHead(200, { 'Content-Type': 'text/plain' });
+	res.end('Hello World\n');
+}).listen(port, hostname, function(){
+	console.log('Server running at http://'+hostname+':'+port);
+});
+</code></pre>
+					</section>
+					<section>
+						<h2>Learn You Node</h2>
+						<p>Get hands on with node.js in the "Learn You Node" workshopper from <a href="http://nodeschool.io">Nodeschool</a></p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Where are the promised ROBOTS?</h1>
+					</section>
+					<section>
+						<h2>Nodecopter</h2>
+						<a href="http://www.nodecopter.com/">www.nodecopter.com</a><br />
+						<em>Andrew Nesbit (et al)</em>
+						<a href="https://www.youtube.com/watch?v=ymlbNEL5TQQ">torero ;-)</a>
+					</section>
+					<section>
+						<h2>Johnny-Five</h2>
+						<a href="http://johnny-five.io">johnny-five.io</a>
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>Sharing Code</h1>
+						<p class="fragment">How to deal with all those scripts...</p>
+					</section>
+					<section>
+						<h2>The Mighty NPM</h2>
+						<ul>
+							<li class="fragment">package.json</li>
+							<li class="fragment">CommonJS</li>
+							<li class="fragment">dependency management</li>
+							<li class="fragment"><a href="http://npmjs.org">npmjs.org</a></li>
+						</ul>
+					</section>
+					<section>
+						<h2>Browserify</h2>
+						<a href="http://browserify.org">browserify.org</a><br/>
+						<em>substack</em>
+						<img src="./img/substack.jpg" />
+					</section>
+				</section>
+
+				<section>
+					<section>
+						<h1>The Future</h1>
+					</section>
+					<section>
+						<h2>ES6/7 and Babel</h2>
+					</section>
+					<section>
+						<h2>Electron</h2>
+					</section>
+					<section>
+						<h2>React Native</h2>
+					</section>
+					<section>
+						<h2>Chakra Core</h2>
+					</section>
 				</section>
 
 			</div>
@@ -57,6 +771,7 @@
 				progress: true,
 				history: true,
 				center: true,
+				width: '90%',
 
 				transition: 'slide', // none/fade/slide/convex/concave/zoom
 
@@ -109,6 +824,6 @@
 			}
 
 		</script>
-
+		<script src="./js/ragbag.js"></script>
 	</body>
 </html>
