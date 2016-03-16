@@ -347,6 +347,7 @@ var assigned = function () {
 	console.log(arguments);
 })('foo', 'bar');
 </code></pre>
+						<p class="fragment">Why isn't 'arguments' an array?</p>
 					</section>
 					<section>
 						<h2>Hoisting</h2>
@@ -359,12 +360,49 @@ function greeter (name) {
 					</section>
 					<section>
 						<h2>Scope</h2>
+						<p>In Javascript* the function is the container of scope</p>
+						<p class="fragment">* up 'till es6</p>
+<pre><code class="hljs javascript" data-trim>
+var breakfast = 'eggs';
+var weight = 10;
+function diet () {
+	var breakfast = 'museli';
+	weight = weight - 1;
+}
+diet();
+console.log(breakfast);
+console.log('weight');
+</code></pre>
+					</section>
+					<section>
+						<h2>Global Scope</h2>
+						<p>A great evil?</p>
 					</section>
 					<section>
 						<h2>Closures</h2>
+						<p>A beautiful bubble is born.</p>
+ <pre><code class="hljs javascript" data-trim>
+function announcer(thing) {
+	return function(){
+		console.log(thing);
+	}
+}
+var rush = announcer('All staff to checkouts, please');
+var tealeaf = announcer('There is a caller at the gate');
+</code></pre>
 					</section>
 					<section>
 						<h2>Methods and the 'this' keyword</h2>
+<pre><code class="hljs javascript" data-trim>
+var crisis = {
+	state: 'urgent',
+	manage: function(){
+		this.state = 'resolved';
+	}
+};
+crisis.manage();
+console.log(crisis.state);
+</code></pre>
 					</section>
 					<section>
 						<h2>Secrets of the Javascript Ninja</h2>
@@ -413,7 +451,9 @@ head.appendChild(script);
 <pre><code class="hljs javascript" data-trim>
 var button = document.createElement('button');
 button.innerText = 'Click Me';
-button.addEventListener('click', function(evt) { alert('BOOM!'); });
+button.addEventListener('click', function(evt) {
+	alert('BOOM!');
+});
 document.querySelector('body').appendChild(button);
 </code></pre>
 					</section>
@@ -684,7 +724,7 @@ xmlhttp.send();
 									<ul>
 										<li>Add a button</li>
 										<li>Attatch a listener on click</li>
-										<li>Get you location</li>
+										<li>Get your location</li>
 										<li>Make a request to the toilet map API</li>
 										<li>Parse the data</li>
 										<li>Construct an HTML display of the data</li>
@@ -746,7 +786,8 @@ http.createServer(function(req, res) {
 	res.writeHead(200, { 'Content-Type': 'text/plain' });
 	res.end('Hello World\n');
 }).listen(port, hostname, function(){
-	console.log('Server running at http://'+hostname+':'+port);
+	var addr = 'http://' + hostname + ':' + port';
+	console.log('Server running at ' + addr);
 });
 </code></pre>
 					</section>
@@ -763,7 +804,8 @@ http.createServer(function(req, res) {
 					<section>
 						<h2>Nodecopter</h2>
 						<a href="http://www.nodecopter.com/">www.nodecopter.com</a><br />
-						<em>Andrew Nesbit (et al)</em>
+						<em>Andrew Nesbit (et al)</em><br/>
+
 						<a href="https://www.youtube.com/watch?v=ymlbNEL5TQQ">torero ;-)</a>
 					</section>
 					<section>
