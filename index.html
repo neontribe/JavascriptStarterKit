@@ -390,17 +390,32 @@ function greeter (name) {
 						<a href="https://developer.mozilla.org/en-US/docs/Web">MDN</a>
 					</section>
 					<section>
-						<h2>document.querySelector</h2>
+						<h2>Finding Things</h2>
+<pre><code class="hljs javascript" data-trim>
+var head = document.querySelector('head');
+</code></pre>
 					</section>
 					<section>
-						<h2>document.createElement</h2>
+						<h2>Making Things</h2>
+<pre><code class="hljs javascript" data-trim>
+var script = document.createElement('script');
+</code></pre>
 					</section>
 					<section>
-						<h2>document.appendChild</h2>
+						<h2>Inserting Things</h2>
+<pre><code class="hljs javascript" data-trim>
+head.appendChild(script);
+</code></pre>
 					</section>
 					<section>
 						<h2>Events</h2>
 						<a href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener">element.addEventListener</a>
+<pre><code class="hljs javascript" data-trim>
+var button = document.createElement('button');
+button.innerText = 'Click Me';
+button.addEventListener('click', function(evt) { alert('BOOM!'); });
+document.querySelector('body').appendChild(button);
+</code></pre>
 					</section>
 				</section>
 
