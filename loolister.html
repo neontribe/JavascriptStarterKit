@@ -1,0 +1,76 @@
+<html>
+<head>
+  <title>LooLister</title>
+</head>
+<body>
+  <script>
+    // Define a function to contain our application
+    (function loolister () {
+      // Make a lovely button
+      var button = document.createElement('button');
+      // label it
+      button.innerText = 'Find nearby loos';
+      // Add a 'listener' to execute a callback when the button is clicked
+      button.addEventListener('click', function() {
+        // Call the geolocation api with a callback function to execute when position information has been discovered
+        navigator.geolocation.getCurrentPosition(function(position_info){
+          // Assign the latitude and logitude from the position information to variables for ease of use
+          var lat = position_info.coords.latitude;
+          var lon = position_info.coords.longitude;
+          // Construct a url to the toiletmap service, using out lat and lon
+          var host = 'http://greatbritishpublictoiletmap.rca.ac.uk';
+          var path = '/loos/near/' + lon + '/' + lat;
+          var url = host + path;
+          // Start setting up a new web request which we'll use to get the information from the service
+          var xmlhttp = new XMLHttpRequest();
+          // Register a function to execute whenever the 'state' of the request changes
+          xmlhttp.onreadystatechange = function() {
+            // This function will execute several times during the lifecycle of the request
+            // We are currently interested in the point when it is in readyState 4 nd when the status code is 200
+            // This (slightly arcane) combination of factors indicates that the request was sucessfull.
+          	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+              // Since we're sure that the request went well we can take the information returned (which is currently
+              // of type 'string' and use the inbuilt JSON parser to turn it into an object full of structured data.
+          		var data = JSON.parse(xmlhttp.responseText);
+              // We'll make an 'unordered list' element to add elements to
+              var list = document.createElement('ul');
+              // Loop over the array of data in data.features, each item in which represents the sum of human knowledge
+              // about a particular convenience. The 'forEach' function of an array takes a function to execute for each item in the array.
+              // The item is passed as an argument to the function.
+              data.features.forEach(function(loo){
+                // Start by creating a 'list item' element to contain the information about the loo.
+                var loo_el = document.createElement('li');
+                // The loo might have a value in loo.properties.name, if so we'll show it, otherwise we'll mark it,
+                // humorously, as anonymous. Note the use of the OR operator:
+                var loo_name = loo.properties.name || 'Anonymous';
+                // Make a string containing some distance information. Take the distance value from the loo (which will be a floating point number),
+                // use the 'Math' library to round it, and turn the result into a string which we can concatenate with another...
+                var distance_text = Math.round(loo.distance).toString() + ' meters away';
+                // Set the text into our 'li' element
+                loo_el.innerText = loo_name + ' (' + distance_text + ')';
+                // Add the list item for this loo to the 'ul' whcih should contain it
+                list.appendChild(loo_el);
+              });
+              // Now we've completed our list we can add it to the document
+              document.querySelector('body').appendChild(list);
+          	}
+          };
+          // Finishe setting up our request. Connfigure its http method and the url it will go to
+          xmlhttp.open("GET", host + path, true);
+          // Set a header to tell the server at the other end that we'd like our loo
+          // data in JSON format
+          xmlhttp.setRequestHeader("Accept", "application/json");
+          // Finally, dispatch the request. The next thing which happens should be the body of your handler
+          // function for onreadystatechange (defined above)
+          xmlhttp.send();
+        });
+
+
+      });
+      // Add the button to the body
+      document.querySelector('body').appendChild(button);
+    })(); // We've defined our application as a function which we immediately execute.
+
+  </script>
+</body>
+</html>
