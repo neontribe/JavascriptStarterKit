@@ -18,7 +18,7 @@
           var lat = position_info.coords.latitude;
           var lon = position_info.coords.longitude;
           // Construct a url to the toiletmap service, using out lat and lon
-          var host = 'https://greatbritishpublictoiletmap.rca.ac.uk';
+          var host = 'https://gbptm-ui.herokuapp.com';
           var path = '/loos/near/' + lon + '/' + lat;
           var url = host + path;
           // Start setting up a new web request which we'll use to get the information from the service
