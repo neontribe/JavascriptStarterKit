@@ -31,7 +31,7 @@
           	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
               // Since we're sure that the request went well we can take the information returned (which is currently
               // of type 'string' and use the inbuilt JSON parser to turn it into an object full of structured data.
-          		var data = JSON.parse(xmlhttp.responseText);
+          	  var data = JSON.parse(xmlhttp.responseText);
               // We'll make an 'unordered list' element to add elements to
               var list = document.createElement('ul');
               // Loop over the array of data in data.features, each item in which represents the sum of human knowledge
