@@ -696,7 +696,7 @@ navigator.geolocation.getCurrentPosition(function(pos){
 					<section>
 <pre><code class="hljs javascript" data-trim>
 var xmlhttp = new XMLHttpRequest();
-var host = 'http://greatbritishpublictoiletmap.rca.ac.uk';
+var host = 'https://gbptm-ui.herokuapp.com';
 var path = '/loos/near/-0.08770/51.50824';
 xmlhttp.onreadystatechange = function() {
 	if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
@@ -707,7 +707,8 @@ xmlhttp.onreadystatechange = function() {
 xmlhttp.open("GET", host + path, true);
 xmlhttp.setRequestHeader("Accept", "application/json");
 xmlhttp.send();
-</code></pre>
+</code></pre>ch4Good award
+<em>Incidentally the Great British Public Toilet Map is up for a Tech4Good award. You can vote for it here: <a href="http://www.tech4goodawards.com/peoples-award">http://www.tech4goodawards.com/peoples-award</a></em>
 					</section>
 					<section>
 						<h2>AJAX - a New Dawn</h2>
@@ -726,10 +727,10 @@ xmlhttp.send();
 							<li>Using Javascript:
 									<ul>
 										<li>Add a button</li>
-										<li>Attatch a listener on click</li>
-										<li>Get your location</li>
-										<li>Make a request to the toilet map API</li>
-										<li>Parse the data</li>
+										<li>Attatch a listener on click in which you:</li>
+										<li>Get your location and then:</li>
+										<li>Make a request to the toilet map API and then:</li>
+										<li>Parse the data and then:</li>
 										<li>Construct an HTML display of the data</li>
 									</ul>
 							</li>
@@ -911,7 +912,7 @@ http.createServer(function(req, res) {
 
 					var xmlhttp = new XMLHttpRequest();
 
-					var url = 'http://greatbritishpublictoiletmap.rca.ac.uk/loos/near/' + pos.coords.longitude + '/' + pos.coords.latitude;
+					var url = 'https://gbptm-ui.herokuapp.com/loos/near/' + pos.coords.longitude + '/' + pos.coords.latitude;
 
 					xmlhttp.onreadystatechange = function() {
 					    if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
