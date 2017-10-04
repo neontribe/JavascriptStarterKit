@@ -1,0 +1,29 @@
+<html>
+    <head></head>
+    <body>
+
+        <script src="./jquery.js"></script>
+        <script>
+            $('body').append('<button>Find Loos</button>');
+            $('body > button').on('click', function(){
+                navigator.geolocation.getCurrentPosition(function(pos){
+                    var url = 'https://gbptm-ui.herokuapp.com/loos/near/';
+                    url += pos.coords.longitude;
+                    url += '/';
+                    url += pos.coords.latitude;
+                    $.getJSON(url, function(data){
+                        var ul = $('<ul/>');
+                        data.features.forEach(function(loo){
+                            var li = $('<li/>');
+                            var loo_name = loo.properties.name || 'Anonymous';
+                            var distance_text = Math.round(loo.distance).toString() + ' meters away';
+                            li.append(loo_name + ' (' + distance_text + ')');
+                            ul.append(li);
+                        });
+                        $('body').append(ul);
+                    });
+                });
+            });
+        </script>
+    </body>
+</html>
